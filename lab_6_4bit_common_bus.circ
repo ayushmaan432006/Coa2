@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="logisim" version="2.7.1">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4"/>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#Base" name="6"/>
+
+  <circuit name="main">
+    
+    <!-- Registers -->
+    <comp lib="4" name="Register">
+      <a name="width" val="4"/>
+      <a name="label" val="R0"/>
+      <a name="loc" val="(100,100)"/>
+    </comp>
+
+    <comp lib="4" name="Register">
+      <a name="width" val="4"/>
+      <a name="label" val="R1"/>
+      <a name="loc" val="(100,160)"/>
+    </comp>
+
+    <comp lib="4" name="Register">
+      <a name="width" val="4"/>
+      <a name="label" val="R2"/>
+      <a name="loc" val="(100,220)"/>
+    </comp>
+
+    <comp lib="4" name="Register">
+      <a name="width" val="4"/>
+      <a name="label" val="R3"/>
+      <a name="loc" val="(100,280)"/>
+    </comp>
+
+    <!-- Multiplexer -->
+    <comp lib="2" name="Multiplexer">
+      <a name="width" val="4"/>
+      <a name="select" val="2"/>
+      <a name="loc" val="(300,180)"/>
+    </comp>
+
+    <!-- Select Input -->
+    <comp lib="0" name="Pin">
+      <a name="width" val="2"/>
+      <a name="label" val="Sel"/>
+      <a name="loc" val="(250,300)"/>
+    </comp>
+
+    <!-- Output Bus -->
+    <comp lib="0" name="Pin">
+      <a name="width" val="4"/>
+      <a name="output" val="true"/>
+      <a name="label" val="BUS"/>
+      <a name="loc" val="(400,180)"/>
+    </comp>
+
+    <!-- Wiring -->
+    <wire from="(140,100)" to="(260,140)"/>
+    <wire from="(140,160)" to="(260,160)"/>
+    <wire from="(140,220)" to="(260,200)"/>
+    <wire from="(140,280)" to="(260,220)"/>
+
+    <wire from="(260,140)" to="(300,140)"/>
+    <wire from="(260,160)" to="(300,160)"/>
+    <wire from="(260,200)" to="(300,200)"/>
+    <wire from="(260,220)" to="(300,220)"/>
+
+    <wire from="(300,180)" to="(400,180)"/>
+    <wire from="(250,300)" to="(300,260)"/>
+
+  </circuit>
+</project>
